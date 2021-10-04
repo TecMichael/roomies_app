@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/auth/sign_in.dart';
 import 'package:roomies_app/auth/sign_up.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -85,7 +86,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           borderRadius: BorderRadius.circular(9),
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen() ,),);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                          );
                         },
                         child: Text(
                           'Sign up',
@@ -100,16 +106,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(
                     height: 14,
                   ),
-                   Text.rich(TextSpan(
-                    text: 'Already have an account?  ',
-                    style: TextStyle(color: Colors.grey.shade300),
-                    children: const [
-                      TextSpan(
-                        text: 'Log In',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
-                  ))
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context, 
+                        MaterialPageRoute(
+                          builder: (context) => SignPage()
+                       )
+                        );
+                    },
+                    child: Text.rich(TextSpan(
+                      text: 'Already have an account?  ',
+                      style: TextStyle(color: Colors.grey.shade300),
+                      children: const [
+                        TextSpan(
+                          text: 'Log In',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    )),
+                  )
                 ],
               ),
             ),
