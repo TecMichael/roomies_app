@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
             width: size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/home3.jpg'),
+                image: AssetImage('assets/home4.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -29,6 +30,34 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 210,
+                    bottom: 100,
+                    
+                  ),
+                  child: Text(
+                    'Welcome',
+                    style: GoogleFonts.crimsonText(
+                      color: Colors.white,
+                      fontSize: 45,
+                      letterSpacing: 1.4,
+                    ),
+                  ),
+                ),
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 180,bottom: 100),
+                    child: Text(
+                      'Sign up to get started',
+                      style: GoogleFonts.nunito(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+                
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
@@ -121,21 +150,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                       Text.rich(
+                      Text.rich(
                         TextSpan(
                           text: 'Already have an account?  ',
                           style: TextStyle(color: Colors.grey.shade800),
-                          children:  [
+                          children: [
                             TextSpan(
                               text: 'Log In',
                               style: TextStyle(color: Colors.blue.shade700),
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
