@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/auth/sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -33,31 +34,28 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 210,
-                    bottom: 100,
-                    
+                    bottom: 160,
                   ),
-                  child: Text(
-                    'Welcome',
-                    style: GoogleFonts.crimsonText(
-                      color: Colors.white,
-                      fontSize: 45,
-                      letterSpacing: 1.4,
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 180,bottom: 100),
-                    child: Text(
-                      'Sign up to get started',
-                      style: GoogleFonts.nunito(
-                        color: Colors.white,
-                        fontSize: 18,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Welcome',
+                        style: GoogleFonts.crimsonText(
+                          color: Colors.white,
+                          fontSize: 45,
+                          letterSpacing: 1.4,
+                        ),
                       ),
-                    ),
+                      Text(
+                        'Sign up to get started',
+                        style: GoogleFonts.nunito(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
@@ -71,6 +69,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'First name',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
+                          focusedBorder: const OutlineInputBorder(
+                             borderSide: BorderSide(
+                               color: Colors.blue
+                             )
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.indigo
+                            ),
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(10),
@@ -85,6 +93,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'Last name',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.indigo
+                            )
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.indigo)
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
@@ -99,6 +115,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'Email',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.indigo)
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
@@ -114,10 +136,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'Password',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
                           ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.indigo)
+                          )
                         ),
                       ),
                       const SizedBox(height: 13),
@@ -128,10 +156,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'Phone Number',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
+                          focusedBorder:  OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Colors.blue),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
                           ),
+                           enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                   const BorderSide(color: Colors.indigo),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -150,16 +188,26 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      Text.rich(
-                        TextSpan(
-                          text: 'Already have an account?  ',
-                          style: TextStyle(color: Colors.grey.shade800),
-                          children: [
-                            TextSpan(
-                              text: 'Log In',
-                              style: TextStyle(color: Colors.blue.shade700),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignPage(),
                             ),
-                          ],
+                          );
+                        },
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'Already have an account?  ',
+                            style: TextStyle(color: Colors.grey.shade800),
+                            children: [
+                              TextSpan(
+                                text: 'Log In',
+                                style: TextStyle(color: Colors.blue.shade700),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

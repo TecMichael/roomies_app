@@ -111,7 +111,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       Navigator.push(
                           context, 
                         MaterialPageRoute(
-                          builder: (context) => SignPage()
+                          builder: (context) => const SignPage()
                        )
                         );
                     },
