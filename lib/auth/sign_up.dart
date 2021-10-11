@@ -221,7 +221,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         height: 35,
                         width: 228,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.blue)),
+                            border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
                           minWidth: double.infinity,
@@ -237,7 +237,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                               Text(
                                 'Sign up with Google',
                                 style: TextStyle(
-                                    color: Colors.grey.shade700,
+                                    color: Colors.grey.shade500,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -253,7 +253,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         height: 35,
                         width: 228,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.blue)),
+                            border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
                           minWidth: double.infinity,
@@ -269,9 +269,10 @@ class _SignUpscreenState extends State<SignUpscreen> {
                               Text(
                                 'Sign up with Facebook',
                                 style: TextStyle(
-                                    color: Colors.grey.shade700,
+                                    color: Colors.grey.shade500,
                                     fontSize: 15,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.bold
+                                ),
                               ),
                             ],
                           ),

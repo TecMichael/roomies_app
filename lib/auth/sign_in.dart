@@ -1,8 +1,11 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/auth/forget_password.dart';
 import 'package:roomies_app/auth/sign_up.dart';
 
 class SignPage extends StatefulWidget {
@@ -39,26 +42,28 @@ class _SignPageState extends State<SignPage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                      right: 210,
-                      bottom: 70,
-                      left: 20,
+                      right: 130,
+                      bottom: 1,
+                      left: 25,
                     ),
                     child: Column(
                       children: [
                         Text(
                           'Welcome Back',
-                          style: GoogleFonts.crimsonText(
-                            color: Colors.white,
-                            fontSize: 45,
-                            letterSpacing: 1.2,
-                          ),
+                          style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 35,
+                              letterSpacing: 1.2,
+                              fontWeight: FontWeight.bold),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 32),
+                          padding: const EdgeInsets.only(right: 25),
                           child: Text(
-                            'Let\'s get you started',
+                            'Find your hotel easily and travel anywhere you want with us.',
                             style: GoogleFonts.montserrat(
-                                color: Colors.white, fontSize: 15),
+                              color: Colors.white, fontSize: 18,
+                              // fontWeight: FontWeight.w400
+                            ),
                           ),
                         )
                       ],
@@ -68,27 +73,31 @@ class _SignPageState extends State<SignPage> {
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(12),
-                    decoration: const BoxDecoration(color: Colors.white),
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(22),
+                            topRight: Radius.circular(22))),
                     child: Column(
                       children: <Widget>[
                         TextFormField(
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
-                              hintText: 'Email address@gmail.com',
-                              labelText: 'Email address',
-                              labelStyle: const TextStyle(color: Colors.grey),
-                              hintStyle:
-                                  TextStyle(color: Colors.indigo.shade200),
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blue)),
-                              border: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.black),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Colors.indigo.shade900))),
+                            hintText: 'Email address@gmail.com',
+                            labelText: 'Email address',
+                            labelStyle: const TextStyle(color: Colors.grey),
+                            hintStyle: TextStyle(color: Colors.indigo.shade200),
+                            // focusedBorder: const OutlineInputBorder(
+                            //     borderSide: BorderSide(color: Colors.blue)),
+                            // border: OutlineInputBorder(
+                            //   borderSide: const BorderSide(color: Colors.black),
+                            //   borderRadius: BorderRadius.circular(10),
+                            // ),
+                            // enabledBorder: OutlineInputBorder(
+                            //   borderSide:
+                            //       BorderSide(color: Colors.indigo.shade900),
+                            // ),
+                          ),
                         ),
                         const SizedBox(height: 30),
                         TextFormField(
@@ -99,31 +108,42 @@ class _SignPageState extends State<SignPage> {
                             labelText: 'Password',
                             labelStyle: const TextStyle(color: Colors.grey),
                             hintStyle: TextStyle(color: Colors.indigo.shade200),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.indigo.shade900),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: Colors.indigo),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
+                            // focusedBorder: OutlineInputBorder(
+                            //   borderSide: const BorderSide(color: Colors.blue),
+                            //   borderRadius: BorderRadius.circular(10),
+                            // ),
+                            // enabledBorder: OutlineInputBorder(
+                            //   borderSide:
+                            //       BorderSide(color: Colors.indigo.shade900),
+                            //   borderRadius: BorderRadius.circular(10),
+                            // ),
+                            // border: OutlineInputBorder(
+                            //   borderSide:
+                            //       const BorderSide(color: Colors.indigo),
+                            //   borderRadius: BorderRadius.circular(10),
+                            // ),
                           ),
                         ),
                         const SizedBox(height: 12),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
-                            Text(
-                              'Forgot password?',
-                              style: TextStyle(color: Colors.indigo),
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const ForgotPassword(),
+                              ),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                'Forgot password?',
+                                style:
+                                    GoogleFonts.poppins(color: Colors.indigo),
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: 14),
                         Container(
@@ -167,7 +187,7 @@ class _SignPageState extends State<SignPage> {
                                 thickness: 1.4,
                               )),
                               Text(
-                                '      OR     ',
+                                '      Or Log in with   ',
                               ),
                               Expanded(
                                 child:
@@ -181,7 +201,8 @@ class _SignPageState extends State<SignPage> {
                           height: 35,
                           width: 228,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Colors.blue)),
+                            border: Border.all(color: Colors.grey),
+                          ),
                           child: MaterialButton(
                             height: 50,
                             minWidth: double.infinity,
@@ -195,9 +216,9 @@ class _SignPageState extends State<SignPage> {
                                   width: 10,
                                 ),
                                 Text(
-                                  'Sign up with Google',
+                                  ' Google',
                                   style: TextStyle(
-                                      color: Colors.grey.shade700,
+                                      color: Colors.grey.shade500,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -211,7 +232,8 @@ class _SignPageState extends State<SignPage> {
                           height: 35,
                           width: 228,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Colors.blue)),
+                            border: Border.all(color: Colors.grey),
+                          ),
                           child: MaterialButton(
                             height: 50,
                             minWidth: double.infinity,
@@ -224,12 +246,14 @@ class _SignPageState extends State<SignPage> {
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
-                                  'Sign up with Facebook',
-                                  style: TextStyle(
-                                      color: Colors.grey.shade700,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
+                                GestureDetector(
+                                  child: Text(
+                                    ' Facebook',
+                                    style: TextStyle(
+                                        color: Colors.grey.shade500,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ],
                             ),
@@ -242,6 +266,7 @@ class _SignPageState extends State<SignPage> {
                             children: [
                               TextSpan(
                                 text: 'Sign up',
+                                style: const TextStyle(color: Colors.indigo),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     Navigator.push(
