@@ -19,8 +19,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/home5.jpg'),
-             
+                image: AssetImage('assets/home7.jpeg'),
+                colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
                 fit: BoxFit.cover,
               ),
             ),
@@ -97,9 +97,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         child: Text(
                           'Sign up',
                           style: TextStyle(
-                              fontSize: 16, color: Colors.grey.shade200),
+                              fontSize: 16, color: Colors.indigo.shade500
+                              ),
                         ),
-                        color: Colors.indigo.shade500,
+                        color: Colors.white,
                         height: 45,
                       ),
                     ),
@@ -116,13 +117,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                        )
                         );
                     },
-                    child: Text.rich(TextSpan(
+                    child: const Text.rich(TextSpan(
                       text: 'Already have an account?  ',
-                      style: TextStyle(color: Colors.grey.shade300),
-                      children: const [
+                      style: TextStyle(color: Colors.white),
+                      children: [
                         TextSpan(
                           text: 'Log In',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Colors.blue,
+                          fontWeight: FontWeight.w700),
+                          
                         ),
                       ],
                     )),

@@ -144,7 +144,7 @@ class _SignPageState extends State<SignPage> {
                                     decoration: TextDecoration.underline),
                               ),
                               Text(
-                                'Forget password',
+                                'Forgot password',
                                 style: TextStyle(
                                     color: Colors.blue,
                                     decoration: TextDecoration.underline),
