@@ -1,15 +1,18 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/auth/sign_in.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpscreen extends StatefulWidget {
+  const SignUpscreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUpscreenState createState() => _SignUpscreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpscreenState extends State<SignUpscreen> {
   bool _secure = true;
 
   @override
@@ -22,9 +25,11 @@ class _LoginScreenState extends State<LoginScreen> {
             height: size.height,
             width: size.width,
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/home4.jpg'),
-                fit: BoxFit.cover,
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xff9C5AC3),
+                  Color(0xff6B5FBC),
+                ],
               ),
             ),
           ),
@@ -35,22 +40,26 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                    right: 210,
-                    bottom: 160,
+                    right: 120,
+                    bottom: 25,
+                    left: 29,
                   ),
                   child: Column(
                     children: [
                       Text(
-                        'Welcome',
-                        style: GoogleFonts.crimsonText(
-                          color: Colors.white,
-                          fontSize: 45,
-                          letterSpacing: 1.4,
-                        ),
+                        'Create   Account',
+                        style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 32,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       Text(
-                        'Sign up to get started',
-                        style: GoogleFonts.nunito(
+                        'Find your hotel easily and travel anywhere you want with us.',
+                        style: GoogleFonts.poppins(
                           color: Colors.white,
                           fontSize: 18,
                         ),
@@ -61,14 +70,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(color: Colors.white),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
+                  ),
                   child: Column(
                     children: <Widget>[
+                      const SizedBox(height: 14),
                       TextFormField(
                         style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                          hintText: 'First name',
-                          labelText: 'First name',
+                          hintText: 'Name',
+                          labelText: 'Name',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
                           focusedBorder: const OutlineInputBorder(
@@ -78,24 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 14),
-                      TextFormField(
-                        style: const TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                          hintText: 'Last name',
-                          labelText: 'Last name',
-                          labelStyle: const TextStyle(color: Colors.grey),
-                          hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          focusedBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.indigo)),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.indigo)),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -123,61 +121,56 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: const TextStyle(color: Colors.black),
                         obscureText: _secure,
                         decoration: InputDecoration(
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  _secure = !_secure;
-                                });
-                              },
-                              icon: const Icon(Icons.visibility),
-                            ),
-                            hintText: 'Password',
-                            labelText: 'Password',
-                            labelStyle: const TextStyle(color: Colors.grey),
-                            hintStyle: TextStyle(color: Colors.indigo.shade200),
-                            focusedBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue)),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.indigo))),
-                      ),
-                      const SizedBox(height: 13),
-                      TextFormField(
-                        style: const TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                          hintText: 'Phone Number',
-                          labelText: 'Phone Number',
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _secure = !_secure;
+                              });
+                            },
+                            icon: const Icon(Icons.visibility),
+                          ),
+                          hintText: 'Password',
+                          labelText: 'Password',
                           labelStyle: const TextStyle(color: Colors.grey),
                           hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.blue),
-                            borderRadius: BorderRadius.circular(10),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue),
                           ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.indigo),
-                            borderRadius: BorderRadius.circular(10),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.indigo),
                           ),
                         ),
                       ),
+                      const SizedBox(height: 13),
                       const SizedBox(height: 30),
-                      MaterialButton(
-                        height: 50,
-                        minWidth: double.infinity,
-                        onPressed: () {},
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontSize: 15,
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xff9C5AC3),
+                              Color(0xff6B5FBC),
+                            ],
                           ),
                         ),
-                        color: Colors.indigo.shade400,
+                        // color: Gradient.linear(from, to, colors),
+                        child: MaterialButton(
+                          height: 50,
+                          minWidth: double.infinity,
+                          onPressed: () {},
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                            ),
+                          ),
+                          // color: Gradient.linear(from, to, colors),
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -204,6 +197,83 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Expanded(child: Divider(color: Colors.black)),
+                          Text(
+                            '     OR     ',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w400),
+                          ),
+                          Expanded(
+                              child:
+                                  Divider(color: Colors.grey, thickness: 1.4)),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 35,
+                        width: 228,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue)),
+                        child: MaterialButton(
+                          height: 50,
+                          minWidth: double.infinity,
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset('assets/icons/google.svg',
+                                  height: 16),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Sign up with Google',
+                                style: TextStyle(
+                                    color: Colors.grey.shade700,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          // color: Gradient.linear(from, to, colors),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 35,
+                        width: 228,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue)),
+                        child: MaterialButton(
+                          height: 50,
+                          minWidth: double.infinity,
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset('assets/icons/facebook.svg',
+                                  height: 16),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Sign up with Facebook',
+                                style: TextStyle(
+                                    color: Colors.grey.shade700,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
                           ),
                         ),
                       ),
