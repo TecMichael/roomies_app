@@ -108,20 +108,6 @@ class _SignPageState extends State<SignPage> {
                             labelText: 'Password',
                             labelStyle: const TextStyle(color: Colors.grey),
                             hintStyle: TextStyle(color: Colors.indigo.shade200),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.blue),
-                            //   borderRadius: BorderRadius.circular(10),
-                            // ),
-                            // enabledBorder: OutlineInputBorder(
-                            //   borderSide:
-                            //       BorderSide(color: Colors.indigo.shade900),
-                            //   borderRadius: BorderRadius.circular(10),
-                            // ),
-                            // border: OutlineInputBorder(
-                            //   borderSide:
-                            //       const BorderSide(color: Colors.indigo),
-                            //   borderRadius: BorderRadius.circular(10),
-                            // ),
                           ),
                         ),
                         const SizedBox(height: 12),
