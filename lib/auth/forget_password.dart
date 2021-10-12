@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -37,6 +38,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SvgPicture.asset('assets/icons/forgot.svg', height: 190),
+                const SizedBox(height: 70),
                 Text(
                   'Please Enter Your Email Address To\nReceive A Verification Code.',
                   textAlign: TextAlign.center,
@@ -45,7 +48,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       color: Colors.white,
                       fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 TextFormField(
                   style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
