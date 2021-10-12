@@ -14,79 +14,66 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(centerTitle: true,
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
         backgroundColor: const Color(0xff9C5AC3),
-        title: const Text(
-          'Forgot Password',
-          
-        ),
+        title: const Text('Forgot Password'),
       ),
-      body: Stack(
-        children: [
-          Container(
-            height: size.height,
-            width: size.width,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xff9C5AC3),
-                  Color(0xff6B5FBC),
-                ],
-              ),
-            ),
+      body: Container(
+        height: size.height,
+        width: size.width,
+        padding: const EdgeInsets.symmetric(horizontal: 18),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff9C5AC3),
+              Color(0xff6B5FBC),
+            ],
           ),
-          Positioned(
-            height: 600,
-            left: 80,
-            child: Row(
-              // mainAxisAlignment: MainAxisAlignment.center,
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                    'Please Enter Your Email Address To\n Receive A Verification Code.',
-                    style: GoogleFonts.poppins(
+                  'Please Enter Your Email Address To\nReceive A Verification Code.',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
                       fontSize: 16,
                       color: Colors.white,
-                      fontWeight: FontWeight.w600
-                    ),
-                    ),
+                      fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  style: const TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    hintText: 'Email Address',
+                    labelText: 'Email Address',
+                    labelStyle: const TextStyle(color: Colors.white),
+                    hintStyle: TextStyle(color: Colors.indigo.shade200),
+                  ),
+                ),
+                const SizedBox(height: 65),
+                MaterialButton(
+                  height: 50,
+                  minWidth: 300,
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Send',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  // color: Colors.indigo.shade400,
+                ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 400),
-            child: TextFormField(
-              style: const TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                suffixIcon: const Icon(Icons.visibility),
-                hintText: 'Email Address',
-                labelText: 'Email Address',
-                labelStyle: const TextStyle(color: Colors.white),
-                hintStyle: TextStyle(color: Colors.indigo.shade200),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top:600, ),
-            child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                             color: Colors.white
-                            ),
-                             child: MaterialButton(
-                              height: 50,
-                              minWidth: 300,
-                              onPressed: () {},
-                              child: const Text(
-                                'Send',
-                                style: TextStyle(
-                                fontSize: 15,
-                   ),
-                    ),
-                 // color: Colors.indigo.shade400,
-               ),
-           ),
-          ),
-        ],
+        ),
       ),
     );
   }
