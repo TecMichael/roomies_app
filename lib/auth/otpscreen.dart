@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:roomies_app/auth/otpscreen.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({Key? key}) : super(key: key);
 
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _OtpScreenState createState() => _OtpScreenState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {   
+class _OtpScreenState extends State<OtpScreen> {
+  TextEditingController? _otp;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,7 +21,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: const Color(0xff9C5AC3),
-        title: const Text('Forgot Password'),
+        title: const Text('Verify Your Email'),
       ),
       body: Container(
         height: size.height,
@@ -42,40 +43,47 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 SvgPicture.asset('assets/icons/forgot.svg', height: 190),
                 const SizedBox(height: 70),
                 Text(
-                  'Please Enter Your Email Address To\nReceive A Verification Code.',
+                  'Please Enter The 4 Digit Code Sent To @Gmail.com',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(height: 40),
-                TextFormField(
-                  style: const TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                    hintText: 'Email Address',
-                    labelText: 'Email Address',
-                    labelStyle: const TextStyle(color: Colors.white),
-                    hintStyle: TextStyle(color: Colors.indigo.shade200),
+                const SizedBox(
+                  height: 65,
+                ),
+                PinCodeTextField(
+                  appContext: context,
+                  controller: _otp,
+                  showCursor: false,
+                  length: 4,
+                  animationType: AnimationType.fade,
+                  onChanged: (value) => print(value),
+                  pastedTextStyle: TextStyle(
+                    color: Colors.red.shade600,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  pinTheme: PinTheme(
+                    shape: PinCodeFieldShape.circle,
+                    fieldHeight: 60,
+                    fieldWidth: 60,
+                    inactiveColor: Colors.white,
+                    selectedColor: Colors.green,
+                    activeFillColor: Colors.white,
+                    activeColor: const Color(0xFF04E2CF),
+                    selectedFillColor: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 65),
+                const SizedBox(height: 56,),
                 MaterialButton(
                   height: 50,
                   minWidth: 300,
                   color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>OtpScreen() ));
-                  },
-                  child: const Text(
-                    'Send',
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  // color: Colors.indigo.shade400,
-                ),
+                  onPressed:() {
+                              } ,
+                  child:
+                   const Text('Verify'))
               ],
             ),
           ),

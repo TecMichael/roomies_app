@@ -1,9 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/auth/sign_in.dart';
+import 'package:roomies_app/style/colors.dart';
+import 'package:roomies_app/widget/texform_widget.dart';
 
 class SignUpscreen extends StatefulWidget {
   const SignUpscreen({Key? key}) : super(key: key);
@@ -54,9 +55,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                             letterSpacing: 1.2,
                             fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      const SizedBox(height: 10),
                       Text(
                         'Find your hotel easily and travel anywhere you want with us.',
                         style: GoogleFonts.poppins(
@@ -80,81 +79,29 @@ class _SignUpscreenState extends State<SignUpscreen> {
                   child: Column(
                     children: <Widget>[
                       const SizedBox(height: 14),
-                      TextFormField(
-                        style: const TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                          hintText: 'Name',
-                          labelText: 'Name',
-                          labelStyle: const TextStyle(color: Colors.grey),
-                          hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          focusedBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue)),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.indigo),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
+                      const TextformWidget(hintText: 'Name', labelText: 'Name'),
                       const SizedBox(height: 14),
-                      TextFormField(
-                        style: const TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                          hintText: 'Email@gmail.com',
-                          labelText: 'Email',
-                          labelStyle: const TextStyle(color: Colors.grey),
-                          hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          focusedBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue)),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.indigo)),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.red),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
+                      const TextformWidget(
+                          hintText: 'Email@gmail.com', labelText: 'Email'),
                       const SizedBox(height: 14),
-                      TextFormField(
-                        style: const TextStyle(color: Colors.black),
-                        obscureText: _secure,
-                        decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                _secure = !_secure;
-                              });
-                            },
-                            icon: const Icon(Icons.visibility),
-                          ),
-                          hintText: 'Password',
-                          labelText: 'Password',
-                          labelStyle: const TextStyle(color: Colors.grey),
-                          hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.red),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.indigo),
-                          ),
+                      TextformWidget(
+                        hintText: 'Password',
+                        labelText: 'Password',
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _secure = !_secure;
+                            });
+                          },
+                          icon: const Icon(Icons.visibility),
                         ),
                       ),
-                      const SizedBox(height: 13),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 43),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff9C5AC3),
-                              Color(0xff6B5FBC),
-                            ],
+                            colors: [MyColors.kmain, MyColors.kprimary],
                           ),
                         ),
                         // color: Gradient.linear(from, to, colors),
@@ -172,9 +119,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                           // color: Gradient.linear(from, to, colors),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      const SizedBox(height: 10),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -271,8 +216,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                                 style: TextStyle(
                                     color: Colors.grey.shade500,
                                     fontSize: 15,
-                                    fontWeight: FontWeight.bold
-                                ),
+                                    fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),

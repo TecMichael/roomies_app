@@ -28,109 +28,93 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           Scaffold(
             backgroundColor: Colors.transparent,
             body: SafeArea(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 130,
-                    // width: 300,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        right: 250,
-                        top: 17,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 23, 20, 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 130,
+                        child: Text(
+                          'Roomies',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
-                      child: Text(
-                        'Roomies',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
+                      Text(
+                        'Find your\nperfect place\nto  stay',
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.poppins(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 45,
+                        ),
+                        // style: ,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        'Find your hotel easily and travel\nanywhere you want with us',
+                        style: GoogleFonts.raleway(
+                          color: Colors.white,
+                          fontSize: 15,
                         ),
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 42),
-                    child: Text(
-                      'Find your\nperfect place\nto  stay',
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 45,
-                      ),
-                      // style: ,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 140),
-                    child: Text(
-                      'Find your hotel easily and travel\nanywhere you want with us',
-                      style: GoogleFonts.raleway(
-                        color: Colors.white,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 280,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24, right: 24),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: MaterialButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(9),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                           context, MaterialPageRoute(
-                           builder: (context) 
-                           => const SignUpscreen(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Sign up',
-                          style: TextStyle(
-                              fontSize: 16, color: Colors.indigo.shade500
+                      const SizedBox(height: 230),
+                      SizedBox(
+                        width: double.infinity,
+                        child: MaterialButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(9),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignUpscreen(),
                               ),
+                            );
+                          },
+                          child: Text(
+                            'Sign up',
+                            style: TextStyle(
+                                fontSize: 16, color: Colors.indigo.shade500),
+                          ),
+                          color: Colors.white,
+                          height: 45,
                         ),
-                        color: Colors.white,
-                        height: 45,
                       ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context, 
-                        MaterialPageRoute(
-                          builder: (context) => const SignPage()
-                       )
-                        );
-                    },
-                    child: const Text.rich(TextSpan(
-                      text: 'Already have an account?  ',
-                      style: TextStyle(color: Colors.white),
-                      children: [
-                        TextSpan(
-                          text: 'Log In',
-                          style: TextStyle(color: Colors.blue,
-                          fontWeight: FontWeight.w700),
-                          
+                      const SizedBox(height: 14),
+                      Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignPage()));
+                          },
+                          child: const Text.rich(TextSpan(
+                            text: 'Already have an account?  ',
+                            style: TextStyle(color: Colors.white),
+                            children: [
+                              TextSpan(
+                                text: 'Log In',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          )),
                         ),
-                      ],
-                    )),
-                  )
-                ],
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
