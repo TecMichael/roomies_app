@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:roomies_app/auth/forget_password.dart';
+import 'package:roomies_app/auth/reset_password.dart';
 import 'package:roomies_app/auth/sign_up.dart';
 
 class SignPage extends StatefulWidget {
@@ -74,10 +72,12 @@ class _SignPageState extends State<SignPage> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(12),
                     decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(22),
-                            topRight: Radius.circular(22))),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(22),
+                        topRight: Radius.circular(22),
+                      ),
+                    ),
                     child: Column(
                       children: <Widget>[
                         TextFormField(
@@ -150,6 +150,7 @@ class _SignPageState extends State<SignPage> {
                               'Login',
                               style: TextStyle(
                                 fontSize: 15,
+                                color: Colors.white
                               ),
                             ),
                             // color: Colors.indigo.shade400,

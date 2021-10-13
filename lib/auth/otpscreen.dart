@@ -40,15 +40,15 @@ class _OtpScreenState extends State<OtpScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset('assets/icons/forgot.svg', height: 190),
-                const SizedBox(height: 70),
+                SvgPicture.asset('assets/icons/forgot.svg', height: 200),
+                const SizedBox(height: 30),
                 Text(
-                  'Please Enter The 4 Digit Code Sent To @Gmail.com',
+                  'Enter The Code',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      fontSize: 16,
+                      fontSize: 24,
                       color: Colors.white,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(
                   height: 65,
@@ -75,7 +75,8 @@ class _OtpScreenState extends State<OtpScreen> {
                     selectedFillColor: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 56,),
+                const SizedBox(height: 56,
+                ),
                 MaterialButton(
                   height: 50,
                   minWidth: 300,

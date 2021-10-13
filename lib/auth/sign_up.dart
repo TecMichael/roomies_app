@@ -148,9 +148,9 @@ class _SignUpscreenState extends State<SignUpscreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Expanded(child: Divider(color: Colors.black)),
+                          Expanded(child: Divider(color: Colors.grey, thickness: 1.4,)),
                           Text(
-                            '     OR     ',
+                            '     Or register with    ',
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w400),
                           ),
@@ -163,9 +163,10 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         height: 10,
                       ),
                       Container(
-                        height: 35,
-                        width: 228,
+                        height: 50,
+                        width: 368,
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
@@ -180,7 +181,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                                 width: 10,
                               ),
                               Text(
-                                'Sign up with Google',
+                                ' Google',
                                 style: TextStyle(
                                     color: Colors.grey.shade500,
                                     fontSize: 15,
@@ -192,12 +193,13 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         ),
                       ),
                       const SizedBox(
-                        height: 10,
+                        height: 13,
                       ),
                       Container(
-                        height: 35,
-                        width: 228,
+                        height: 50,
+                        width: 368,
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
@@ -212,7 +214,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                                 width: 10,
                               ),
                               Text(
-                                'Sign up with Facebook',
+                                ' Facebook',
                                 style: TextStyle(
                                     color: Colors.grey.shade500,
                                     fontSize: 15,
