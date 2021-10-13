@@ -17,24 +17,10 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: const Color(0xff9C5AC3),
-        title: const Text('Verify Your Email'),
-      ),
       body: Container(
         height: size.height,
         width: size.width,
         padding: const EdgeInsets.symmetric(horizontal: 18),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xff9C5AC3),
-              Color(0xff6B5FBC),
-            ],
-          ),
-        ),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -50,41 +36,71 @@ class _OtpScreenState extends State<OtpScreen> {
                       color: Colors.white,
                       fontWeight: FontWeight.w700),
                 ),
+                Text(
+                  'Enter  OTP',
+                  style: GoogleFonts.poppins(
+                      fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 35),
+                SizedBox(
+                  width: size.width - 120,
+                  child: PinCodeTextField(
+                    appContext: context,
+                    controller: _otp,
+                    showCursor: false,
+                    length: 4,
+                    animationType: AnimationType.fade,
+                    onChanged: (value) => debugPrint(value),
+                    pastedTextStyle: TextStyle(
+                      color: Colors.red.shade600,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    pinTheme: PinTheme(
+                      shape: PinCodeFieldShape.box,
+                      borderRadius: BorderRadius.circular(8),
+                      fieldHeight: 50,
+                      fieldWidth: 50,
+                      inactiveColor: Colors.grey,
+                      selectedColor: Colors.green,
+                      activeFillColor: Colors.white,
+                      activeColor: const Color(0xFF04E2CF),
+                      selectedFillColor: Colors.white,
+                    ),
+                  ),
+                ),
                 const SizedBox(
-                  height: 65,
+                  height: 12,
                 ),
-                PinCodeTextField(
-                  appContext: context,
-                  controller: _otp,
-                  showCursor: false,
-                  length: 4,
-                  animationType: AnimationType.fade,
-                  onChanged: (value) => print(value),
-                  pastedTextStyle: TextStyle(
-                    color: Colors.red.shade600,
-                    fontWeight: FontWeight.bold,
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff9C5AC3),
+                        Color(0xff6B5FBC),
+                      ],
+                    ),
                   ),
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.circle,
-                    fieldHeight: 60,
-                    fieldWidth: 60,
-                    inactiveColor: Colors.white,
-                    selectedColor: Colors.green,
-                    activeFillColor: Colors.white,
-                    activeColor: const Color(0xFF04E2CF),
-                    selectedFillColor: Colors.white,
+                  child: MaterialButton(
+                    height: 50,
+                    minWidth: double.infinity,
+                    onPressed: () {} ,
+                    child: const Text(
+                      'Verify',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                    ),
+                    // color: Colors.indigo.shade400,
                   ),
                 ),
-                const SizedBox(height: 56,
+                const SizedBox(height: 36),
+                const Text.rich(
+                  TextSpan(text: 'Did not receive the OTP?   ', children: [
+                    TextSpan(
+                      text: 'Try again',
+                      style: TextStyle(color: Colors.blue),
+                    )
+                  ]),
                 ),
-                MaterialButton(
-                  height: 50,
-                  minWidth: 300,
-                  color: Colors.white,
-                  onPressed:() {
-                              } ,
-                  child:
-                   const Text('Verify'))
               ],
             ),
           ),

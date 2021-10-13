@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/auth/otpscreen.dart';
+
+import 'mail.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -43,7 +45,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 185, bottom: 30),
+                  padding: const EdgeInsets.only(right: 185, bottom: 10),
                   child: Text(
                     'Reset\nPassword',
                     style: GoogleFonts.poppins(
@@ -54,13 +56,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 60, bottom: 40),
+                  padding: const EdgeInsets.only(right: 60, bottom: 40, left: 13),
                   child: Text(
                       'Enter the email/phone number associated\nwith your account and we’ll send an OTP\nto reset your password.',
                       style: GoogleFonts.poppins(
                           color: Colors.white,
                           fontWeight: FontWeight.w300,
-                          fontSize: 17)),
+                          fontSize: 15)),
                 ),
                 Container(
                   width: double.infinity,
@@ -112,7 +114,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           minWidth: double.infinity,
                           onPressed: () {
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => const OtpScreen()));
+                                MaterialPageRoute(builder: (_) => const MailVerify()));
                           },
                           child: const Text(
                             'Send',

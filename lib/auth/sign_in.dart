@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:roomies_app/auth/reset_password.dart';
+import 'package:roomies_app/auth/verify_password.dart';
 import 'package:roomies_app/auth/sign_up.dart';
 
 class SignPage extends StatefulWidget {
