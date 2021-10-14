@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:roomies_app/auth/reset_password.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -84,7 +85,10 @@ class _OtpScreenState extends State<OtpScreen> {
                   child: MaterialButton(
                     height: 50,
                     minWidth: double.infinity,
-                    onPressed: () {} ,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => const ResetPassword()));
+                    },
                     child: const Text(
                       'Verify',
                       style: TextStyle(fontSize: 15, color: Colors.white),

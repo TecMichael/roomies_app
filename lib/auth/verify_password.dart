@@ -80,8 +80,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       TextFormField(
                         style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            hintText: 'Email address/Phone number',
-                            labelText: 'Email address/Phone number',
+                            hintText: 'Email address',
+                            labelText: 'Email address',
                             focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.blue)),
                             border: OutlineInputBorder(
