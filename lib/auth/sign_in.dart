@@ -3,8 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/auth/home_page.dart';
 import 'package:roomies_app/auth/verify_password.dart';
 import 'package:roomies_app/auth/sign_up.dart';
+import 'package:roomies_app/widget/texform_widget.dart';
 
 class SignPage extends StatefulWidget {
   const SignPage({Key? key}) : super(key: key);
@@ -40,10 +42,7 @@ class _SignPageState extends State<SignPage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                      right: 130,
-                      bottom: 1,
-                      left: 25,
-                    ),
+                        right: 130, bottom: 1, left: 25, top: 30),
                     child: Column(
                       children: [
                         Text(
@@ -67,7 +66,7 @@ class _SignPageState extends State<SignPage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 40),
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(12),
@@ -80,35 +79,16 @@ class _SignPageState extends State<SignPage> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        TextFormField(
-                          style: const TextStyle(color: Colors.black),
-                          decoration: InputDecoration(
-                            hintText: 'Email address@gmail.com',
-                            labelText: 'Email address',
-                            labelStyle: const TextStyle(color: Colors.grey),
-                            hintStyle: TextStyle(color: Colors.indigo.shade200),
-                            // focusedBorder: const OutlineInputBorder(
-                            //     borderSide: BorderSide(color: Colors.blue)),
-                            // border: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.black),
-                            //   borderRadius: BorderRadius.circular(10),
-                            // ),
-                            // enabledBorder: OutlineInputBorder(
-                            //   borderSide:
-                            //       BorderSide(color: Colors.indigo.shade900),
-                            // ),
-                          ),
+                        const SizedBox(height: 30),
+                        const TextformWidget(
+                          hintText: 'Email address@gmail.com',
+                          labelText: 'Email address',
                         ),
                         const SizedBox(height: 30),
-                        TextFormField(
-                          style: const TextStyle(color: Colors.black),
-                          decoration: InputDecoration(
-                            suffixIcon: const Icon(Icons.visibility),
-                            hintText: 'Password',
-                            labelText: 'Password',
-                            labelStyle: const TextStyle(color: Colors.grey),
-                            hintStyle: TextStyle(color: Colors.indigo.shade200),
-                          ),
+                        const TextformWidget(
+                          hintText: 'Password',
+                          labelText: 'Password',
+                          suffixIcon: Icon(Icons.visibility),
                         ),
                         const SizedBox(height: 12),
                         GestureDetector(
@@ -145,13 +125,16 @@ class _SignPageState extends State<SignPage> {
                           child: MaterialButton(
                             height: 50,
                             minWidth: double.infinity,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => const HomePage()));
+                            },
                             child: const Text(
                               'Login',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white
-                              ),
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
                             ),
                             // color: Colors.indigo.shade400,
                           ),

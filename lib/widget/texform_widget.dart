@@ -16,16 +16,16 @@ class TextformWidget extends StatelessWidget {
         labelText: labelText,
         labelStyle: const TextStyle(color: Colors.grey),
         hintStyle: TextStyle(color: Colors.indigo.shade200),
-        // suffixIcon: suffixIcon,
-        // focusedBorder: const OutlineInputBorder(
-        //     borderSide: BorderSide(color: Colors.blue)),
-        // enabledBorder: const OutlineInputBorder(
-        //   borderSide: BorderSide(color: Colors.indigo),
-        // ),
-        // border: OutlineInputBorder(
-        //   borderSide: const BorderSide(color: Colors.black),
-        //   borderRadius: BorderRadius.circular(10),
-        // ),
+        suffixIcon: suffixIcon,
+        focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.blue)),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.indigo),
+        ),
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.black),
+          borderRadius: BorderRadius.circular(10),
+        ),
       ),
     );
   }

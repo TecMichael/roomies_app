@@ -32,17 +32,19 @@ class _ResetPasswordState extends State<ResetPassword> {
               height: size.height,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                      right: 130,
+                      right: 100,
                       bottom: 1,
                       left: 25,
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Welcome Back',
+                          'Create new\npassword',
                           style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontSize: 35,
@@ -50,11 +52,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                               fontWeight: FontWeight.bold),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 25),
+                          padding: const EdgeInsets.only(right: 25, top: 10),
                           child: Text(
-                            'Find your hotel easily and travel anywhere you want with us.',
-                            style: GoogleFonts.montserrat(
-                              color: Colors.white, fontSize: 18,
+                            'Your new password must be different\nfrom previously used password',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white, fontSize: 14,
                               // fontWeight: FontWeight.w400
                             ),
                           ),
@@ -62,7 +64,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 80),
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(12),
@@ -74,7 +76,82 @@ class _ResetPasswordState extends State<ResetPassword> {
                       ),
                     ),
                     child: Column(
-                      children: [],
+                      children: <Widget>[
+                        const SizedBox(height: 20),
+                        TextFormField(
+                          style: const TextStyle(color: Colors.black),
+                          decoration: InputDecoration(
+                              suffixIcon: const Icon(Icons.visibility),
+                              hintText: 'Password',
+                              labelText: 'Password',
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.blue),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide:
+                                    const BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              enabledBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.grey),
+                              ),
+                              labelStyle: const TextStyle(color: Colors.grey),
+                              hintStyle:
+                                  TextStyle(color: Colors.indigo.shade200)),
+                        ),
+                        const SizedBox(
+                          height: 17,
+                        ),
+                        TextFormField(
+                          style: const TextStyle(color: Colors.black),
+                          decoration: InputDecoration(
+                              hintText: 'Confirm password',
+                              labelText: 'Confirm password',
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide:
+                                    const BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              enabledBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.grey),
+                              ),
+                              labelStyle: const TextStyle(color: Colors.grey),
+                              hintStyle:
+                                  TextStyle(color: Colors.indigo.shade200)),
+                        ),
+                        const SizedBox(
+                          height: 43,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xff9C5AC3),
+                                Color(0xff6B5FBC),
+                              ],
+                            ),
+                          ),
+                          child: MaterialButton(
+                            height: 55,
+                            minWidth: double.infinity,
+                            onPressed: () {},
+                            child: const Text(
+                              'Reset Password',
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 200,
+                        )
+                      ],
                     ),
                   ),
                 ],
