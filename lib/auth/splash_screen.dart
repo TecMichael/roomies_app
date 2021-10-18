@@ -19,7 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/home7.jpeg'),
+                image: AssetImage('assets/home8.jpeg'),
                 colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
                 fit: BoxFit.cover,
               ),
