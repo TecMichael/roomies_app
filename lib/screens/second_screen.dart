@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:roomies_app/widget/texform_widget.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({Key? key}) : super(key: key);
@@ -50,7 +48,8 @@ class _SecondScreenState extends State<SecondScreen> {
                       topRight: Radius.circular(22),
                     ),
                   ),
-                  child: Column(
+                  child: Column(mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
                         decoration: BoxDecoration(
@@ -100,10 +99,17 @@ class _SecondScreenState extends State<SecondScreen> {
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                       ),
-                     const Divider(color: Colors.grey, thickness: 1.4),
+                      const Divider(color: Colors.grey, thickness: 1.4),
                       const SizedBox(
-                        height: 20,
-                      )
+                        height: 10,
+                      ),
+                      Text(
+                        '   Facilities',
+                        style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            color: const Color(0xFF53246F),
+                            fontWeight: FontWeight.w600),
+                      ),
                     ],
                   ),
                 ),

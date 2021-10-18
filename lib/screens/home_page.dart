@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                       style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: Colors.purple),
+                          color: const Color(0xff53246F)),
                     ),
                     Text(
                       'See All',
