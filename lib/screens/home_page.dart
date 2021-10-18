@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/screens/second_screen.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+ 
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -186,12 +188,17 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    GradientText(
                       '    Popular Offers',
                       style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: const Color(0xff53246F)),
+                          ),
+                          colors: const [
+                            Colors.blue,
+                           Colors.red,
+              
+                          ],
                     ),
                     Text(
                       'See All',

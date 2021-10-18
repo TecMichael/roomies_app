@@ -37,6 +37,7 @@ dependencies:
   google_fonts: 
   flutter_svg: ^0.22.0
   pin_code_fields: ^7.3.0
+  simple_gradient_text: ^1.2.2
 
   
 dev_dependencies:
