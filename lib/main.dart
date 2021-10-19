@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth/splash_screen.dart';
+import 'package:roomies_app/screens/home_page.dart';
 import 'style/colors.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class Homepage extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      home: const HomePage(),
     );
   }
 }

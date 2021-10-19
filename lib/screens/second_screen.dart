@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/model/hotel_model.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-
-
+import 'package:carousel_slider/carousel_slider.dart';
 
 class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  final int index;
+  const SecondScreen({Key? key, required this.index}) : super(key: key);
 
   @override
   _SecondScreenState createState() => _SecondScreenState();
@@ -39,8 +40,12 @@ class _SecondScreenState extends State<SecondScreen> {
             Container(
               height: size.height,
               width: size.width,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(hotellist[widget.index].image),
+                ),
+                gradient: const LinearGradient(
                   colors: [
                     Color(0xff9C5AC3),
                     Color(0xff6B5FBC),
@@ -53,13 +58,27 @@ class _SecondScreenState extends State<SecondScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(
-                        right: 130, bottom: 1, left: 25, top: 30),
+                  // const Padding(
+                  //   padding: EdgeInsets.only(
+                  //       right: 130, bottom: 1, left: 25, top: 30),
+                  // ),
+                  SizedBox(
+                    height: 350,
+                    width: size.width,
+                    child: CarouselSlider(
+                      options: CarouselOptions(
+                        aspectRatio: 2.0,
+                        enlargeCenterPage: true,
+                        scrollDirection: Axis.horizontal,
+                        autoPlay: true,
+                        height: 350,
+                      ),
+                      items: hotellist[widget.index].rooms,
+                    ),
                   ),
-                  const SizedBox(height: 40),
                   Container(
                     width: double.infinity,
+                    height: size.height - 350,
                     padding: const EdgeInsets.all(12),
                     decoration: const BoxDecoration(
                       color: Colors.white,
@@ -72,23 +91,12 @@ class _SecondScreenState extends State<SecondScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color(0xff9C5AC3),
-                                Color(0xff6B5FBC),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 30),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              'Agbaje Hotel',
+                              hotellist[widget.index].name,
                               style: GoogleFonts.poppins(
                                   fontSize: 26, fontWeight: FontWeight.w500),
                             ),
@@ -101,18 +109,22 @@ class _SecondScreenState extends State<SecondScreen> {
                         ),
                         const SizedBox(height: 17),
                         Row(
-                          children: const <Widget>[
-                            Icon(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            const Icon(
                               Icons.location_pin,
                               size: 18,
                               color: Colors.grey,
                             ),
-                            Text('  35, London street, oluugbo ibadan')
+                            Expanded(
+                                child: Text(
+                                    '  ${hotellist[widget.index].location}'))
                           ],
                         ),
                         const SizedBox(height: 10),
-                        const Text(
-                          ' Agbaje Hotel offers ultimate comfort and luxury.\nThis 4-storied hotel is a beautiful combination of traditional grandeur and modern facilities.\nThe 255 exclusive guest rooms are furnished with a range of modern amenities such as television and internet access. International direct-dial phone and safe are also available in any of these rooms. Wake-up call facility is also available in these rooms. ',
+                        Text(
+                          hotellist[widget.index].description,
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -168,7 +180,7 @@ class _SecondScreenState extends State<SecondScreen> {
                             }),
                           ),
                         ),
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 25),
                         Column(
                           children: [
                             Container(
@@ -192,7 +204,7 @@ class _SecondScreenState extends State<SecondScreen> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 50)
+                            const SizedBox(height: 30)
                           ],
                         ),
                       ],
