@@ -195,9 +195,8 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w600,
                           ),
                           colors: const [
-                            Colors.blue,
-                           Colors.red,
-              
+                            Color(0xff9C5AC3),
+                           Color(0xff6B5FBC),
                           ],
                     ),
                     Text(
