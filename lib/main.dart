@@ -4,11 +4,11 @@ import 'package:roomies_app/screens/home_page.dart';
 import 'style/colors.dart';
 
 void main() {
-  runApp(const Homepage());
+  runApp(const MyApp());
 }
 
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,4 +23,3 @@ class Homepage extends StatelessWidget {
     );
   }
 }
-
