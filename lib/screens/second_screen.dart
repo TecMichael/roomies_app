@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/model/hotel_model.dart';
+import 'package:roomies_app/model/popular_offers.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class SecondScreen extends StatefulWidget {
   final int index;
-  const SecondScreen({Key? key, required this.index}) : super(key: key);
+  final String? id;
+  const SecondScreen({Key? key, required this.index, this.id})
+      : super(key: key);
 
   @override
   _SecondScreenState createState() => _SecondScreenState();
@@ -18,7 +21,9 @@ class _SecondScreenState extends State<SecondScreen> {
     'Wifi',
     '24/7',
     'Pool',
-    'Parking'
+    'Parking',
+    'Spa',
+    'Air Condition'
   ];
 
   final List<IconData> _facilityIcons = [
@@ -27,6 +32,8 @@ class _SecondScreenState extends State<SecondScreen> {
     Icons.timelapse_outlined,
     Icons.pool,
     Icons.local_parking_outlined,
+    Icons.spa,
+    Icons.ac_unit,
   ];
 
   @override
@@ -34,6 +41,12 @@ class _SecondScreenState extends State<SecondScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      extendBody: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        primary: false,
+      ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -43,7 +56,9 @@ class _SecondScreenState extends State<SecondScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(hotellist[widget.index].image),
+                  image: NetworkImage(widget.id == 'popular'
+                      ? offers[widget.index].image
+                      : hotellist[widget.index].image),
                 ),
                 gradient: const LinearGradient(
                   colors: [
@@ -73,7 +88,9 @@ class _SecondScreenState extends State<SecondScreen> {
                         autoPlay: true,
                         height: 350,
                       ),
-                      items: hotellist[widget.index].rooms,
+                      items: widget.id == 'popular'
+                          ? offers[widget.index].rooms
+                          : hotellist[widget.index].rooms,
                     ),
                   ),
                   Container(
@@ -96,7 +113,9 @@ class _SecondScreenState extends State<SecondScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              hotellist[widget.index].name,
+                              widget.id == 'popular'
+                                  ? offers[widget.index].name
+                                  : hotellist[widget.index].name,
                               style: GoogleFonts.poppins(
                                   fontSize: 26, fontWeight: FontWeight.w500),
                             ),
@@ -118,17 +137,21 @@ class _SecondScreenState extends State<SecondScreen> {
                               color: Colors.grey,
                             ),
                             Expanded(
-                                child: Text(
-                                    '  ${hotellist[widget.index].location}'))
+                              child: Text(widget.id == 'popular'
+                                  ? '   ${offers[widget.index].location}'
+                                  : '   ${hotellist[widget.index].location}'),
+                            )
                           ],
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          hotellist[widget.index].description,
+                          widget.id == 'popular'
+                              ? offers[widget.index].description
+                              : hotellist[widget.index].description,
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        const Divider(color: Colors.grey, thickness: 1.4),
+                        Divider(color: Colors.grey[350], thickness: 1.4),
                         const SizedBox(height: 10),
                         GradientText(
                           'Facilities',
@@ -141,43 +164,44 @@ class _SecondScreenState extends State<SecondScreen> {
                           scrollDirection: Axis.horizontal,
                           physics: const BouncingScrollPhysics(),
                           child: Row(
-                            children:
-                                List.generate(_facilityItems.length, (index) {
-                              return Container(
-                                height: 40,
-                                // width: 170,
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 12),
-                                margin: const EdgeInsets.only(right: 15),
-                                decoration: BoxDecoration(
-                                  color: const Color(0x5D6B5FBC),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 13),
-                                  child: Expanded(
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          _facilityIcons[index],
-                                          size: 20,
-                                          color: const Color(0xff6B5FBC),
-                                        ),
-                                        const SizedBox(width: 10),
-                                        Text(
-                                          _facilityItems[index],
-                                          style: GoogleFonts.poppins(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500,
+                            children: List.generate(
+                              _facilityItems.length,
+                              (index) {
+                                return Container(
+                                  height: 40,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12),
+                                  margin: const EdgeInsets.only(right: 13),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0x5D6B5FBC),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 13),
+                                    child: Expanded(
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            _facilityIcons[index],
+                                            size: 20,
                                             color: const Color(0xff6B5FBC),
                                           ),
-                                        )
-                                      ],
+                                          const SizedBox(width: 10),
+                                          Text(
+                                            _facilityItems[index],
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500,
+                                              color: const Color(0xff6B5FBC),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              );
-                            }),
+                                );
+                              },
+                            ),
                           ),
                         ),
                         const SizedBox(height: 25),

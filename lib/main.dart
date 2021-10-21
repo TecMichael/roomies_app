@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:roomies_app/auth/splash_screen.dart';
 import 'package:roomies_app/screens/home_page.dart';
 import 'style/colors.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const WelcomeScreen(),
     );
   }
 }
