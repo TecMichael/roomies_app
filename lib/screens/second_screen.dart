@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/model/hotel_model.dart';
 import 'package:roomies_app/model/popular_offers.dart';
+import 'package:roomies_app/screens/pages/room_selection.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -41,11 +42,37 @@ class _SecondScreenState extends State<SecondScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      extendBody: true,
+      extendBodyBehindAppBar: true,
+      // backgroundColor: Colors.transparent,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.transparent,
-        primary: false,
+        elevation: 0,
+        actions: [
+          Container(
+            height: 30,
+            width: 50,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(9),
+              boxShadow: const [
+                BoxShadow(
+                  // color: Colors.white.withOpacity(0.90),
+                  blurRadius: 9.5,
+                  offset: Offset(1, 5),
+                ),
+              ],
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.favorite,
+                size: 25,
+                color: Colors.red,
+              ),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -123,7 +150,21 @@ class _SecondScreenState extends State<SecondScreen> {
                               height: 30,
                               width: 30,
                               color: Colors.amber,
-                            )
+                              child: FittedBox(
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      '5',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 17),
@@ -220,7 +261,13 @@ class _SecondScreenState extends State<SecondScreen> {
                               child: MaterialButton(
                                 height: 55,
                                 minWidth: double.infinity,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                              const SelectionScreen()));
+                                },
                                 child: const Text(
                                   'Select Room',
                                   style: TextStyle(
@@ -233,7 +280,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             )

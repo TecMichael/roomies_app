@@ -6,7 +6,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 import '../second_screen.dart';
 
 class MainDashboard extends StatefulWidget {
- const MainDashboard({Key? key}) : super(key: key);
+  const MainDashboard({Key? key}) : super(key: key);
 
   @override
   _MainDashboardState createState() => _MainDashboardState();
@@ -277,7 +277,10 @@ class _MainDashboardState extends State<MainDashboard> {
                                           '5',
                                           style: TextStyle(fontSize: 19),
                                         ),
-                                        Icon(Icons.star)
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.white,
+                                        )
                                       ],
                                     ),
                                   ),

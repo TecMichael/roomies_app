@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primaryColor: MyColors.kmain,
         textTheme: GoogleFonts.poppinsTextTheme(),
+      
       ),
       debugShowCheckedModeBanner: false,
       home: const WelcomeScreen(),
