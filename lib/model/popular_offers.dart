@@ -26,7 +26,7 @@ List<PopularOffers> offers = [
     location: 'Oluyole Local Government, 35 7up Rd, Oluyole 234200, Ibadan',
     price: 'N250,000',
     name: 'Michael.A Hotel',
-    ratings: '',
+    ratings: '4.8',
     description:
         'Michael.A Hotel Titania is located in the heart of the Historical and Commercial Center of Athens and has recently been renovated. It\'s surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It\'s located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices. Hotel Titania is a unique Athens Hotel which guarantees its guests an unforgettable stay. ',
     rooms: [
@@ -46,7 +46,7 @@ List<PopularOffers> offers = [
     location: '3554 Formula Lane,Texas Dallas',
     name: 'Fresh Studio',
     price: 'N120,000',
-    ratings: '',
+    ratings: '4.5',
     description:
         'The Fresh Studio Rome offers 80 elegant and plush rooms decorated and furnished in a classical style with warm colors, quality furnishings and rich fabrics. Situated close to Cornelia Metro Station overlooking the Vatican and a pine forest, the Pinewood Hotel Rome also offers free parking, a gorgeous outdoor sun terrace, a hotel lounge room serving an extensive complimentary breakfast to all of our guests.',
     rooms: [
@@ -64,7 +64,7 @@ List<PopularOffers> offers = [
     location: '2320 Don Jackson Lane,Papaikou',
     name: 'Oluyole Hotel',
     price: 'N90,000',
-    ratings: '',
+    ratings: '3.9',
     description:
         'We at Oluyole Hotel strive to create a pleasant and welcoming atmosphere. It’s our goal to make our clients feel at ease, greeting them with professionalism and attention for their every need. All our accommodations have satellite television, bathroom with shower, room safe, heating and air conditioning. All the rooms are equipped with balcony, some with a sea view.  We also have a restaurant on the ground floor to satisfy our guests with authentic regional cooking.  We are ready to give you an unforgettable holiday!',
     rooms: [
@@ -83,7 +83,7 @@ List<PopularOffers> offers = [
     location: '1871 Havanna Street,Greensboro North Carolina',
     name: ' Sheraton Universal,',
     price: 'N490,000',
-    ratings: '',
+    ratings: '4.4',
     description:
         'This hotel sits in central Nice, just 1,150 feet from the ferry port and a 20-minute walk from the Promenade des Anglais. Its rooms are air-conditioned with free Wi-Fi access. The guest rooms at the Kyriad Nice Port are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. The Kyriad Hotel Nice Port has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning. ',
     rooms: [

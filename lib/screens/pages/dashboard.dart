@@ -267,19 +267,22 @@ class _MainDashboardState extends State<MainDashboard> {
                                 Container(
                                   height: 26.9,
                                   width: 32,
-                                  decoration: const BoxDecoration(
-                                    color: Color(0xffFFCA28),
+                                  decoration:  BoxDecoration(
+                                    color: const Color(0xFFF48A37),
+                                    borderRadius: BorderRadius.circular(5)
                                   ),
                                   child: FittedBox(
-                                    child: Row(
-                                      children: const [
+                                    child: Column(
+                                      children: const <Widget>[
+                                        Icon(Icons.star,
+                                            color: Colors.white, size: 36),
+                                        SizedBox(height: 6),
                                         Text(
-                                          '5',
-                                          style: TextStyle(fontSize: 19),
-                                        ),
-                                        Icon(
-                                          Icons.star,
-                                          color: Colors.white,
+                                          '4.8',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 37,
+                                              fontWeight: FontWeight.bold),
                                         )
                                       ],
                                     ),

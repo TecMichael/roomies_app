@@ -5,4 +5,6 @@ class MyColors {
 
   static const Color kmain = Color(0xFF9C5AC3);
   static const Color kprimary = Color(0xff6B5FBC);
+  static const Color kIconColor = Color(0xFFF48A37);
+
 }
