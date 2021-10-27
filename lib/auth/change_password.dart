@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:roomies_app/auth/otpscreen.dart';
+import 'package:roomies_app/auth/new_password.dart';
 
-import 'mail.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class ChangePassword extends StatefulWidget {
+  const ChangePassword({Key? key}) : super(key: key);
 
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _ChangePasswordState createState() => _ChangePasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ChangePasswordState extends State<ChangePassword> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -55,17 +51,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(right: 79, bottom: 40, left: 13),
-                  child: Text(
-                    'Enter your phone number associated\nwith your account and we’ll send an OTP\nto reset your password.',
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15),
-                  ),
-                ),
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
@@ -78,28 +63,42 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   child: Column(
                     children: <Widget>[
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 50),
                       TextFormField(
                         style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            hintText: 'Phone Number',
-                            labelText: 'Phone Number',
-                            focusedBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue)),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.black),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.indigo.shade900),
-                            ),
+                            hintText: 'Current Password',
+                            labelText: 'Current Password',
                             labelStyle: const TextStyle(color: Colors.grey),
                             hintStyle:
                                 TextStyle(color: Colors.indigo.shade200)),
                       ),
                       const SizedBox(
                         height: 29,
+                      ),
+                      TextFormField(
+                        style: const TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          hintText: 'New Password',
+                          labelText: 'New Password',
+                          labelStyle: const TextStyle(color: Colors.grey),
+                          hintStyle: TextStyle(color: Colors.indigo.shade200),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 29,
+                      ),
+                      TextFormField(
+                        style: const TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                            hintText: 'Confirm New Password',
+                            labelText: 'Confirm New Password',
+                            labelStyle: const TextStyle(color: Colors.grey),
+                            hintStyle:
+                                TextStyle(color: Colors.indigo.shade200)),
+                      ),
+                      const SizedBox(
+                        height: 40,
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -118,17 +117,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => const MailVerify()));
+                                    builder: (_) => const NewPassword()));
                           },
                           child: const Text(
-                            'Send',
+                            'Update Password',
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                           // color: Colors.indigo.shade400,
                         ),
                       ),
                       const SizedBox(
-                        height: 300,
+                        height: 190,
                       )
                     ],
                   ),

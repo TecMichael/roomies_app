@@ -33,7 +33,8 @@ class _MainDashboardState extends State<MainDashboard> {
                           topLeft: Radius.circular(9),
                           topRight: Radius.circular(9),
                           bottomRight: Radius.circular(9),
-                          bottomLeft: Radius.circular(9)),
+                          bottomLeft: Radius.circular(9),
+                          ),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.4),
