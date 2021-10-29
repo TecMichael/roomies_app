@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/model/hotel_model.dart';
 import 'package:roomies_app/model/popular_offers.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import '../second_screen.dart';
+import 'second_screen.dart';
 
 class MainDashboard extends StatefulWidget {
   const MainDashboard({Key? key}) : super(key: key);

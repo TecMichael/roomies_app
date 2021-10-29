@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roomies_app/auth/change_password.dart';
+import 'package:roomies_app/auth/splash_screen.dart';
+import 'package:roomies_app/screens/pages/add_card.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -154,24 +156,32 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         const SizedBox(height: 19),
-                        const ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Color(0xff6B5FBC),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const AddCard()));
+                          },
+                          child: const ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Color(0xff6B5FBC),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          title: Text(
-                            'Add Card',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.grey,
+                            title: Text(
+                              'Add Card',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 19),
@@ -217,20 +227,25 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         const SizedBox(height: 19),
-                        const ListTile(
-                          leading: CircleAvatar(
+                        ListTile(
+                          leading: const CircleAvatar(
                             backgroundColor: Color(0xff6B5FBC),
                             child: Icon(
                               Icons.logout,
                               color: Colors.white,
                             ),
                           ),
-                          title: Text(
-                            'Log Out',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
+                          title: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop(const WelcomeScreen());
+                            },
+                            child: const Text(
+                              'Log Out',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
                           ),
                         ),
                       ],

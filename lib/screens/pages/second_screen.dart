@@ -50,11 +50,11 @@ class _SecondScreenState extends State<SecondScreen> {
         elevation: 0,
         actions: [
           Container(
-            height: 30,
+            height: 20,
             width: 50,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(9),
+              borderRadius: BorderRadius.circular(12),
               boxShadow: const [
                 BoxShadow(
                   // color: Colors.white.withOpacity(0.90),
@@ -100,10 +100,6 @@ class _SecondScreenState extends State<SecondScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  // const Padding(
-                  //   padding: EdgeInsets.only(
-                  //       right: 130, bottom: 1, left: 25, top: 30),
-                  // ),
                   SizedBox(
                     height: 350,
                     width: size.width,

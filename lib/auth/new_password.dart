@@ -25,7 +25,7 @@ class _NewPasswordState extends State<NewPassword> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset('assets/icons/mail.svg', height: 250),
+                Image.asset('assets/icons/change.png', height: 250),
                 const SizedBox(
                   height: 60,
                 ),
@@ -33,7 +33,7 @@ class _NewPasswordState extends State<NewPassword> {
                   'Password Reset',
                   style: GoogleFonts.poppins(
                     fontSize: 27,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(

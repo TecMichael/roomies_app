@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:roomies_app/screens/pages/dashboard.dart';
 import 'package:roomies_app/screens/pages/favorite.dart';
 
-import 'pages/profile.dart';
-import 'pages/unknonw.dart';
+import 'profile.dart';
+import 'unknonw.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
