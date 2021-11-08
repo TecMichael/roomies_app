@@ -156,32 +156,32 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         const SizedBox(height: 19),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const AddCard()));
-                          },
-                          child: const ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Color(0xff6B5FBC),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
+                        ListTile(
+                           onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const AddCard(),
                             ),
-                            title: Text(
-                              'Add Card',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18),
+                          );
+                        },
+                          leading: const CircleAvatar(
+                            backgroundColor: Color(0xff6B5FBC),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
                             ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.grey,
-                            ),
+                          ),
+                          title: const Text(
+                            'Add Card',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
                           ),
                         ),
                         const SizedBox(height: 19),

@@ -12,6 +12,7 @@ class SelectionScreen extends StatefulWidget {
 class _SelectionScreenState extends State<SelectionScreen> {
   @override
   Widget build(BuildContext context) {
+    print(roomlist[1].image);
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.grey.shade700),

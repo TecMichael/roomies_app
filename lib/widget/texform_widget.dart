@@ -26,7 +26,7 @@ class TextformWidget extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.black),
           borderRadius: BorderRadius.circular(10),
         ),
-      ),
+      ), 
     );
   }
 }

@@ -22,7 +22,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Single Room',
       image:
-          'https://www.berjayahotel.com/sites/default/files/hotel-room-type/london/c1-classic-single-room.jpg',
+          'https://webbox.imgix.net/images/owvecfmxulwbfvxm/c56a0c0d-8454-431a-9b3e-f420c72e82e3.jpg?auto=format,compress&fit=crop&crop=entropy',
       sqm: '24.8 sqm',
       bed: 'queen bed',
       guests: '1 guest',
@@ -30,7 +30,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Cabana Room',
       image:
-          'https://loveincorporated.blob.core.windows.net/contentimages/gallery/dbeb3be8-2a3f-48b0-86fb-168010585fe7-Atlantis_Palm_underwatersuite.jpg',
+          'https://pix10.agoda.net/hotelImages/990/99004/99004_16032411380041038142.jpg?s=1024x768',
       sqm: '31.8 sqm',
       bed: 'queen bed',
       guests: '3 guests',
@@ -38,7 +38,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Exclusive Room',
       image:
-          'http://static.asiawebdirect.com/m/phuket/portals/china-hotels-ws/homepage/beijing/top10-luxury-hotels-beijing/pagePropertiesImage/best-luxury-hotels-beijing.jpg.jpg',
+          'https://www.architectureartdesigns.com/wp-content/uploads/2019/07/e0b46f97680a9fa9a72028b3844555aa-1280x720.jpg',
       sqm: '34.8 sqm',
       bed: 'queen bed',
       guests: '2 guest',
@@ -46,7 +46,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Double Room',
       image:
-          'http://static.asiawebdirect.com/m/phuket/portals/china-hotels-ws/homepage/beijing/top10-luxury-hotels-beijing/pagePropertiesImage/best-luxury-hotels-beijing.jpg.jpg',
+          'https://www.thesleepjudge.com/wp-content/uploads/2018/04/master-bedroom-1.jpg',
       sqm: '44.8 sqm',
       bed: 'queen bed',
       guests: '2 guests',
@@ -54,7 +54,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Vip Room',
       image:
-          'http://static.asiawebdirect.com/m/phuket/portals/china-hotels-ws/homepage/beijing/top10-luxury-hotels-beijing/pagePropertiesImage/best-luxury-hotels-beijing.jpg.jpg',
+          'https://cdn.trendir.com/wp-content/uploads/old/interiors/2016/01/26/bedroom-with-built-in-headboard-uno.jpg',
       sqm: '44.8 sqm',
       bed: 'queen bed',
       guests: '2 guests',
@@ -62,7 +62,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Suite Room',
       image:
-          'https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/177/2017/09/29111602/Premier_Grand_Deluxe.1-1400x700.jpg',
+          'https://cloudstorage.amari.com/property/yangshuo/hotel-photos/stay/three-bedroom-suite/three-bedroom-suite-bedroom-1.jpg',
       sqm: '22.8 sqm',
       bed: 'queen bed',
       guests: '1 guest',
@@ -70,15 +70,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Deluxe Room',
       image:
-          'https://www.berjayahotel.com/sites/default/files/hotel-room-type/makati/01-deluxe-room.jpg',
-      sqm: '42.8 sqm',
-      bed: 'queen bed',
-      guests: '3 guest',
-      price: ''),
-  rooms(
-      name: 'Double Deluxe Room',
-      image:
-          'https://lh3.googleusercontent.com/proxy/huDi14_23Blx1oS1HK_5Sasbe_pD3ed55NvSnGpfpk05ojl3p3tEn8iyvow188X9avWvuUbi1vN-VxbM9xj_Pnr2KupEiZp_a_T7ZaQqUF8IUZrhKymHWBEb-LBBfq494gtG',
+          'https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-19-deluxe-premier-king-room-2?wid=4000&fmt=jpeg,rgb&qlt=63,0&op_sharpen=0&resMode=sharp2&op_usm=0,0,0,0&icc=sRGB%20IEC61966-2.1&iccEmbed=1&printRes=72&fit=wrap&qlt=45,0',
       sqm: '42.8 sqm',
       bed: 'queen bed',
       guests: '3 guest',
@@ -86,7 +78,7 @@ List<rooms> roomlist = [
   rooms(
       name: 'Luxury Room',
       image:
-          'https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-19-deluxe-premier-king-room-2?wid=4000&fmt=jpeg,rgb&qlt=63,0&op_sharpen=0&resMode=sharp2&op_usm=0,0,0,0&icc=sRGB%20IEC61966-2.1&iccEmbed=1&printRes=72&fit=wrap&qlt=45,0',
+          'http://cdn.home-designing.com/wp-content/uploads/2018/10/luxury-kids-bedroom-dustry-rose-black-and-white-pink-with-desk.jpg',
       sqm: '42.8 sqm',
       bed: 'queen bed',
       guests: '3 guest',
