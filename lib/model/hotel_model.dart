@@ -45,13 +45,14 @@ List<HotelModel> hotellist = [
     ],
   ),
   HotelModel(
-    image: 'https://www.listfunda.com/wp-content/uploads/2020/01/List-of-5-Star-Hotels-in-Cyprus-2020.jpg',
-    location:
-             '4908 Clarksburg Park Road Toledo,Arizona',
+    image:
+        'https://www.listfunda.com/wp-content/uploads/2020/01/List-of-5-Star-Hotels-in-Cyprus-2020.jpg',
+    location: '4908 Clarksburg Park Road Toledo,Arizona',
     name: ' Primrose High',
     price: 'N90,000',
     ratings: '',
-    description: 'The Hotel Primrose High is located in beautiful Monteverde, famous for its rare and gorgeous cloud forest and friendly community. The views of the Gulf of Nicoya from the hotel\'s 4,200 foot elevation are spectacular. Experience Hotel Fonda Vela\'s natural approach to life with style! Surrounded by beautiful tropical gardens, our buildings are an attractive part of the lush, tropical mountainside. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, large windows help to bring the outdoors inside.',
+    description:
+        'The Hotel Primrose High is located in beautiful Monteverde, famous for its rare and gorgeous cloud forest and friendly community. The views of the Gulf of Nicoya from the hotel\'s 4,200 foot elevation are spectacular. Experience Hotel Fonda Vela\'s natural approach to life with style! Surrounded by beautiful tropical gardens, our buildings are an attractive part of the lush, tropical mountainside. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, large windows help to bring the outdoors inside.',
     rooms: [
       Image.network(
         'https://www.kevmrc.com/wp-content/uploads/2016/12/iberostar-selection-one-of-the-best-lagos-5-star-hotels.jpg',
@@ -74,7 +75,8 @@ List<HotelModel> hotellist = [
     name: ' Beatrix Hotel',
     price: 'N120,000',
     ratings: '',
-    description: 'The  Beatrix hotel has easy access to many of the city’s top attractions, including the Casino, Old Montreal, La Ronde and Montreal’s underground city. Cozy guest rooms with panoramic views allow you to unwind, and an indoor pool and sauna ensure that your stay is filled with ease. Whether you’re on the go, or in town to check out all the charming sights and sounds, Sandman Longueuil is always an impressive treat.',
+    description:
+        'The  Beatrix hotel has easy access to many of the city’s top attractions, including the Casino, Old Montreal, La Ronde and Montreal’s underground city. Cozy guest rooms with panoramic views allow you to unwind, and an indoor pool and sauna ensure that your stay is filled with ease. Whether you’re on the go, or in town to check out all the charming sights and sounds, Sandman Longueuil is always an impressive treat.',
     rooms: [
       Image.network(
         'https://i1.wp.com/theverybesttop10.com/wp-content/uploads/2018/02/Top-10-5-Star-Hotels-In-Frankfurt-9-600x337-1-2.jpg?resize=600%2C337',
@@ -97,7 +99,8 @@ List<HotelModel> hotellist = [
     name: '  New Apollo',
     price: 'N420,000',
     ratings: '',
-    description: 'Enjoy the peace and quiet of the rural environment and benefit from the close proximity to New Apollo At our 3-star Superior Mercure Hotel München Airport Aufkirchen you can relax in one of our 72 comfortable and luxurious rooms. All our accommodations have satellite TV, a safe, as well as complimentary tea and coffee facilities.',
+    description:
+        'Enjoy the peace and quiet of the rural environment and benefit from the close proximity to New Apollo At our 3-star Superior Mercure Hotel München Airport Aufkirchen you can relax in one of our 72 comfortable and luxurious rooms. All our accommodations have satellite TV, a safe, as well as complimentary tea and coffee facilities.',
     rooms: [
       Image.network(
         'https://images2.minutemediacdn.com/image/upload/c_crop,h_1191,w_2121,x_0,y_223/f_auto,q_auto,w_1100/v1555272928/shape/mentalfloss/50569-istock-486178472.jpg',
@@ -120,7 +123,8 @@ List<HotelModel> hotellist = [
     name: 'New Blue Jay Hotel',
     price: 'N200,000',
     ratings: '',
-    description: 'New Blue Jay Hotel is in the center of Athens, 5 minutes walking distance from Larissa railway station and Metaxourghio Metro station. All rooms in the hotel are air-conditioned and have private amenities. The hotel boasts a roof garden from which you can relax and enjoy a splendid view of the city and the Acropolis. The roof garden is open from May to the end of September. Free Wi-Fi is also included.',
+    description:
+        'New Blue Jay Hotel is in the center of Athens, 5 minutes walking distance from Larissa railway station and Metaxourghio Metro station. All rooms in the hotel are air-conditioned and have private amenities. The hotel boasts a roof garden from which you can relax and enjoy a splendid view of the city and the Acropolis. The roof garden is open from May to the end of September. Free Wi-Fi is also included.',
     rooms: [
       Image.network(
         'https://www.planndesign.com/sites/default/files/articles/screenshot_21.png',
@@ -136,14 +140,15 @@ List<HotelModel> hotellist = [
       ),
     ],
   ),
-   HotelModel(
+  HotelModel(
     image:
         'https://silkroaddreamtours.com/wp-content/uploads/2019/11/HardRockHotelSG-Exterior.jpg',
     location: '4178 Cambridge Place,Elkridge,Maryland',
     name: 'Pearl Lodge',
     price: 'N360,000',
     ratings: '',
-    description: 'The Pearl Lodge Titania is located in the heart of the Historical and Commercial Center of Athens and has recently been renovated. It\'s surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It\'s located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices. Hotel Titania is a unique Athens Hotel which guarantees its guests an unforgettable stay. ',
+    description:
+        'The Pearl Lodge Titania is located in the heart of the Historical and Commercial Center of Athens and has recently been renovated. It\'s surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It\'s located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices. Hotel Titania is a unique Athens Hotel which guarantees its guests an unforgettable stay. ',
     rooms: [
       Image.network(
         'https://thumbor.forbes.com/thumbor/711x389/https://blogs-images.forbes.com/neilpatel/files/2016/12/image00.jpg?width=960',
@@ -159,14 +164,15 @@ List<HotelModel> hotellist = [
       ),
     ],
   ),
-   HotelModel(
+  HotelModel(
     image:
         'https://d3mgaxfqdimhxa.cloudfront.net/wp-content/uploads/2021/04/ROVE-AT-THE-PARK-20-1-scaled.jpg',
     location: '4081 Margaret Street,Houston,Texas',
     name: 'The Rove Hotel',
     price: 'N220,000',
     ratings: '',
-    description: 'Enjoy the peace and quiet with a wonderful panoramic view at Rove Hotel . Wake and enjoy the unique view from your room balcony. Each room has a telephone system with direct dial and Internet connection. Our new network allows a faster wireless LAN connection. All rooms are decorated in a rustic style and have radio, TV, private bathroom with shower, and a hair dryer.',
+    description:
+        'Enjoy the peace and quiet with a wonderful panoramic view at Rove Hotel . Wake and enjoy the unique view from your room balcony. Each room has a telephone system with direct dial and Internet connection. Our new network allows a faster wireless LAN connection. All rooms are decorated in a rustic style and have radio, TV, private bathroom with shower, and a hair dryer.',
     rooms: [
       Image.network(
         'https://imhotel.com/wp-content/uploads/2020/01/CLASSIC-STUDIO-420x300.jpg',

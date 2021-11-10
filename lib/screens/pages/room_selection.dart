@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roomies_app/model/rooms.dart';
+import 'package:roomies_app/screens/pages/selected_room.dart';
 
 class SelectionScreen extends StatefulWidget {
   const SelectionScreen({Key? key}) : super(key: key);
@@ -27,79 +28,88 @@ class _SelectionScreenState extends State<SelectionScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, top: 30),
+          padding: const EdgeInsets.only(left: 20, top: 30, right: 10),
           child: ListView.builder(
             itemCount: roomlist.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return Container(
-                // height: 190,
-                width: 375,
-                margin: const EdgeInsets.only(bottom: 15),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      blurRadius: 9.5,
-                      offset: const Offset(5, 5),
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => SelectedRoom(index: index),
                     ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      height: 120,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            roomlist[index].image,
+                  );
+                },
+                child: Container(
+                  width: 375,
+                  margin: const EdgeInsets.only(bottom: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        blurRadius: 9.5,
+                        offset: const Offset(5, 5),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        height: 120,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              roomlist[index].image,
+                            ),
+                            fit: BoxFit.cover,
                           ),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          topRight: Radius.circular(12),
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            topRight: Radius.circular(12),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      roomlist[index].name,
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w700, fontSize: 18),
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          roomlist[index].sqm,
-                          style: TextStyle(
-                              color: Colors.grey.shade900,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          roomlist[index].bed,
-                          style: TextStyle(
-                              color: Colors.grey.shade900,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          roomlist[index].guests,
-                          style: TextStyle(
-                              color: Colors.grey.shade900,
-                              fontWeight: FontWeight.w600),
-                        )
-                      ],
-                    )
-                  ],
+                      const SizedBox(height: 10),
+                      Text(
+                        roomlist[index].name,
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w700, fontSize: 18),
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            roomlist[index].sqm,
+                            style: TextStyle(
+                                color: Colors.grey.shade900,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            roomlist[index].bed,
+                            style: TextStyle(
+                                color: Colors.grey.shade900,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            roomlist[index].guests,
+                            style: TextStyle(
+                                color: Colors.grey.shade900,
+                                fontWeight: FontWeight.w600),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               );
             },
