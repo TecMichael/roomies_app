@@ -25,6 +25,7 @@ class _SecondScreenState extends State<SecondScreen> {
     'Parking',
     'Spa',
     'Air Condition'
+    'Beach'
   ];
 
   final List<IconData> _facilityIcons = [
@@ -35,6 +36,7 @@ class _SecondScreenState extends State<SecondScreen> {
     Icons.local_parking_outlined,
     Icons.spa,
     Icons.ac_unit,
+    Icons.beach_access
   ];
 
   @override
