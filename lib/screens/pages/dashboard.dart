@@ -141,6 +141,41 @@ class _MainDashboardState extends State<MainDashboard> {
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(12),
                               ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 150,right: 0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Container(
+                                      height: 47,
+                                     width: 41,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.75),
+                                        borderRadius: BorderRadius.circular(14),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.45),
+                                            blurRadius: 9.5,
+                                            offset: const Offset(5, 7),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Column(
+                                        children: const [
+                                          Text(
+                                            '4.7',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(width: 5),
+                                          Icon(Icons.star,
+                                              color: Colors.amber, size: 20),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                             const SizedBox(height: 12),
                             Text(

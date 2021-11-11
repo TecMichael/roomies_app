@@ -24,7 +24,7 @@ class _SecondScreenState extends State<SecondScreen> {
     'Pool',
     'Parking',
     'Spa',
-    'Air Condition'
+    'Air Condition',
     'Beach'
   ];
 
@@ -52,16 +52,16 @@ class _SecondScreenState extends State<SecondScreen> {
         elevation: 0,
         actions: [
           Container(
-            height: 20,
+            height: 5,
             width: 50,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: const [
+              borderRadius: BorderRadius.circular(18),
+              boxShadow: [
                 BoxShadow(
-                  // color: Colors.white.withOpacity(0.90),
+                  color: Colors.grey.withOpacity(0.90),
                   blurRadius: 9.5,
-                  offset: Offset(1, 5),
+                  offset: const Offset(5, 2),
                 ),
               ],
             ),
@@ -69,7 +69,7 @@ class _SecondScreenState extends State<SecondScreen> {
               onPressed: () {},
               icon: const Icon(
                 Icons.favorite,
-                size: 25,
+                size: 23,
                 color: Colors.red,
               ),
             ),
@@ -145,24 +145,32 @@ class _SecondScreenState extends State<SecondScreen> {
                                   fontSize: 26, fontWeight: FontWeight.w500),
                             ),
                             Container(
-                              height: 30,
-                              width: 30,
-                              color: Colors.amber,
-                              child: FittedBox(
-                                child: Row(
-                                  children: const [
-                                    Text(
-                                      '5',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 9, vertical: 3),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(14),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.45),
+                                    blurRadius: 9.5,
+                                    offset: const Offset(5, 7),
+                                  ),
+                                ],
                               ),
-                            ),
+                              child: Column(
+                                children: const [
+                                  Text(
+                                    '4.5',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 20),
+                                ],
+                              ),
+                            )
                           ],
                         ),
                         const SizedBox(height: 17),
@@ -273,7 +281,7 @@ class _SecondScreenState extends State<SecondScreen> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 30)
+                            const SizedBox(height: 20)
                           ],
                         ),
                       ],
