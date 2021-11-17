@@ -184,13 +184,16 @@ class _ExtraInformationState extends State<ExtraInformation> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController? _startDate, _endDate;
   DateTime selectedDate = DateTime.now();
+  int? selectedIndex;
+  String? _selectedValue, dropdownValue = 'Occupants';
+  List<String>? itemName;
 
   @override
   Widget build(BuildContext context) {
-    final startDate = customTextFormField(
+    final entryDate = customTextFormField(
       controller: _startDate,
       readOnly: true,
-      label: 'Start date & time',
+      label: 'Entry date ',
       onTap: () async {
         final DateTime? picked = await showDatePicker(
           context: context,
@@ -207,10 +210,10 @@ class _ExtraInformationState extends State<ExtraInformation> {
       },
     );
 
-    final endDate = customTextFormField(
+    final exitDate = customTextFormField(
       controller: _endDate,
       readOnly: true,
-      label: 'End date & time',
+      label: 'Exit date ',
       onTap: () async {
         if (_startDate!.text.isEmpty) {
           debugPrint('Please select start date first');
@@ -231,6 +234,7 @@ class _ExtraInformationState extends State<ExtraInformation> {
         }
       },
     );
+
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -242,16 +246,84 @@ class _ExtraInformationState extends State<ExtraInformation> {
       child: Form(
         key: _formKey,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Expanded(child: startDate),
-                  const SizedBox(width: 15),
-                  Expanded(child: endDate),
+                  Expanded(child: entryDate),
+                  const SizedBox(width: 125),
+                  Expanded(child: exitDate),
+                ],
+              ),
+              const SizedBox(height: 65),
+              SizedBox(
+                width: 150,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(6),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFF9C5AC3)),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    hintText: '  Occupants',
+                    filled: true,
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF9C5AC3)),
+                      // borderSide: BorderSide(width: 0, style: BorderStyle.none),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF9C5AC3)),
+                      // borderSide: BorderSide(width: 0, style: BorderStyle.none),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                  ),
+                  icon: const Icon(Icons.keyboard_arrow_down,
+                      color: Colors.black),
+                  isExpanded: false,
+                  value: _selectedValue,
+                  isDense: true,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedValue = value as String?;
+                      selectedIndex = itemName!.indexOf(value!);
+                    });
+                  },
+                  items: itemName!.map((val) {
+                    return DropdownMenuItem<String>(
+                      value: val,
+                      child: Text(val),
+                    );
+                  }).toList(),
+                ),
+              ),
+              const SizedBox(height: 45),
+              Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xff9C5AC3),
+                          Color(0xff6B5FBC),
+                        ],
+                      ),
+                    ),
+                    child: MaterialButton(
+                      height: 55,
+                      minWidth: double.infinity,
+                      onPressed: () {},
+                      child: const Text(
+                        ' Proceed',
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20)
                 ],
               ),
             ],
@@ -272,7 +344,14 @@ class _ExtraInformationState extends State<ExtraInformation> {
       controller: controller,
       readOnly: readOnly,
       onTap: onTap,
-      decoration: InputDecoration(labelText: label, isDense: true),
+      decoration: InputDecoration(
+        labelText: label,
+        isDense: true,
+        prefixIcon: const Icon(
+          Icons.calendar_today,
+          color: Color(0xFF9C5AC3),
+        ),
+      ),
     );
   }
 
@@ -281,6 +360,17 @@ class _ExtraInformationState extends State<ExtraInformation> {
     super.initState();
     _startDate = TextEditingController();
     _endDate = TextEditingController();
+    itemName = [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+    ];
   }
 
   @override
