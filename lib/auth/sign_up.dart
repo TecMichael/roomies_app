@@ -148,15 +148,20 @@ class _SignUpscreenState extends State<SignUpscreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Expanded(child: Divider(color: Colors.grey, thickness: 1.4,)),
+                          Expanded(
+                            child: Divider(
+                              color: Colors.grey,
+                              thickness: 1.4,
+                            ),
+                          ),
                           Text(
                             '     Or register with    ',
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w400),
                           ),
                           Expanded(
-                              child:
-                                  Divider(color: Colors.grey, thickness: 1.4)),
+                            child: Divider(color: Colors.grey, thickness: 1.4),
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -166,7 +171,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         height: 50,
                         width: 368,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
@@ -199,7 +204,7 @@ class _SignUpscreenState extends State<SignUpscreen> {
                         height: 50,
                         width: 368,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Colors.grey)),
                         child: MaterialButton(
                           height: 50,
