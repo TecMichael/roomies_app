@@ -244,7 +244,7 @@ class _MainDashboardState extends State<MainDashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    MaterialPageRoute(  
                       builder: (_) => SecondScreen(
                         index: index,
                         id: 'popular',

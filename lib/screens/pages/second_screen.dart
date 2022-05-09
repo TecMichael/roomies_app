@@ -113,7 +113,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         autoPlay: true,
                         height: 350,
                       ),
-                      items: widget.id == 'popular'
+                      items: widget.id == "popular"
                           ? offers[widget.index].rooms
                           : hotellist[widget.index].rooms,
                     ),

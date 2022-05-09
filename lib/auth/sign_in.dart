@@ -136,7 +136,7 @@ class _SignPageState extends State<SignPage> {
                               style:
                                   TextStyle(fontSize: 15, color: Colors.white),
                             ),
-                            // color: Colors.indigo.shade400,
+                            // color: Colors.indigo.shade400, 
                           ),
                         ),
                         const SizedBox(height: 30),

@@ -78,8 +78,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   child: Column(
                     children: <Widget>[
-                      const SizedBox(height: 20),
-                      TextFormField(
+                      const SizedBox(height: 20),                      TextFormField(
                         style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                             hintText: 'Phone Number',

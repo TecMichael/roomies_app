@@ -157,14 +157,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         const SizedBox(height: 19),
                         ListTile(
-                           onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const AddCard(),
-                            ),
-                          );
-                        },
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const AddCard(),
+                              ),
+                            );
+                          },
                           leading: const CircleAvatar(
                             backgroundColor: Color(0xff6B5FBC),
                             child: Icon(
